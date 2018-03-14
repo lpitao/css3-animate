@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
-		<link rel="stylesheet" href="../style/animate.css" />
-		<script src="../src/anictr.js"></script>
+		<link rel="stylesheet" href="css/animation.css" />
+		<script src="src/anictr.js"></script>
 		<style>
 			.ccc{
 				width: 100px;
@@ -68,7 +68,7 @@
 			$('#kkk').on('click',function(){
 				anictr({
 					ele:'#ddd',
-					ani:'bounceinR',
+					ani:'a-bounce',
 					dur:'1000',
 					tim: 'ease',
 					before:function(obj){
@@ -79,7 +79,7 @@
 				}).go().then(
 					anictr({
 						ele:'#ddd',
-						ani:'fadeOut',
+						ani:'a-fadeout',
 						dur:'1000',
 						tim: 'ease',
 						before:function(obj){
