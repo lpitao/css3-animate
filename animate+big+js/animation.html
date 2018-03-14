@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3 Animation</title>
+    <link rel="stylesheet" href="css/animation.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            padding: 20px;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background: red;
+            display: inline-block;
+            margin: 8px 8px 8px 0;
+            color: #fff;
+            text-align: center;
+            line-height: 100px;
+
+          /*  -webkit-animation-play-state: paused;
+            -moz-animation-play-state: paused;
+            -o-animation-play-state: paused;
+            animation-play-state: paused;*/
+        }
+
+
+       /* .box:hover {
+            -webkit-animation-play-state: running;
+            -moz-animation-play-state: running;
+            -o-animation-play-state: running;
+            animation-play-state: running;
+        }*/
+
+    </style>
+</head>
+<body>
+<div class="fade">
+    <div class="box a-fadein">淡入</div>
+    <div class="box a-fadeinT">淡入-从上</div>
+    <div class="box a-fadeinR">淡入-从右</div>
+    <div class="box a-fadeinB">淡入-从下</div>
+    <div class="box a-fadeinL">淡入-从左</div>
+    <div class="box a-fadeout">淡出</div>
+    <div class="box a-fadeoutT">淡出-向上</div>
+    <div class="box a-fadeoutR">淡出-向右</div>
+    <div class="box a-fadeoutB">淡出-向下</div>
+    <div class="box a-fadeoutL">淡出-向左</div>
+</div>
+
+<div class="bounce">
+    <div class="box a-bounce">弹跳</div>
+    <div class="box a-bouncein">弹入</div>
+    <div class="box a-bounceinT">弹入-从上</div>
+    <div class="box a-bounceinB">弹入-从下</div>
+    <div class="box a-bounceinR">弹入-从右</div>
+    <div class="box a-bounceinL">弹入-从左</div>
+    <div class="box a-bounceout">弹出</div>
+    <div class="box a-bounceoutT">弹出-向上</div>
+    <div class="box a-bounceoutB">弹出-向下</div>
+    <div class="box a-bounceoutR">弹出-向右</div>
+    <div class="box a-bounceoutL">弹出-向左</div>
+</div>
+
+
+<div class="rotate">
+    <div class="box a-rotatein">转入</div>
+    <div class="box a-rotateinLT">转入-从左上</div>
+    <div class="box a-rotateinLB">转入-从左下</div>
+    <div class="box a-rotateinRT">转入-从右上</div>
+    <div class="box a-rotateinRB">转入-从右下</div>
+    <div class="box a-rotateout">转出</div>
+    <div class="box a-rotateoutLT">转出-向左上</div>
+    <div class="box a-rotateoutLB">转出-向左下</div>
+    <div class="box a-rotateoutRT">转出-向右上</div>
+    <div class="box a-rotateoutRB">转出-向右下</div>
+</div>
+
+<div class="flip">
+    <div class="box a-flip">翻转</div>
+    <div class="box a-flipin">翻入-Y轴</div>
+    <div class="box a-flipinX">翻入-X轴</div>
+    <div class="box a-flipinY">翻入-Y轴</div>
+    <div class="box a-flipout">翻出-Y轴</div>
+    <div class="box a-flipoutX">翻出-X轴</div>
+    <div class="box a-flipoutY">翻出-Y轴</div>
+</div>
+
+<div class="box a-flash">闪烁</div>
+<div class="box a-shake">震颤</div>
+<div class="box a-swing">摇摆</div>
+<div class="box a-wobble">摇晃</div>
+<div class="box a-ring">震铃</div>
+
+
+</body>
+</html>

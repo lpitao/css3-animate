@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../style/animate.css" />
+		<script src="../src/anictr.js"></script>
+		<style>
+			.ccc{
+				width: 100px;
+				height: 20px;
+				background: chocolate;
+			}
+			.eee{
+				width: 100px;
+				height: 20px;
+				background: green;
+			}
+			.ddd{
+				width: 500px;
+				height: 300px;
+				background: aquamarine;
+				display: none;
+			}
+			.kkk{
+				width: 100px;
+				height: 20px;
+				background: cornflowerblue;
+			}
+			/* 淡入 */
+			@-webkit-keyframes fadein{
+			    0%{opacity:0;}
+			    50%{opacity: 0.3;}
+			    100%{opacity:1;}
+			}
+			@-moz-keyframes fadein{
+			    0%{opacity:0;}
+			     50%{opacity: 0.3;}
+			    100%{opacity:1;}
+			}
+			@-ms-keyframes fadein{
+			    0%{opacity:0;}
+			     50%{opacity: 0.3;}
+			    100%{opacity:1;}
+			}
+			@keyframes fadein{
+			    0%{opacity:0;}
+			     50%{opacity: 0.3;}
+			    100%{opacity:1;}
+			}
+			.fadein{
+			  -webkit-animation-name: fadein;
+			  animation-name: fadein;
+			  animation-duration: 3s;
+			  display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="ccc" class="ccc"></div>
+		<div id="eee" class="eee"></div>
+		<div id="kkk" class="kkk"></div>
+		<div class="ddd" id="ddd">
+			123
+		</div>
+		<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.js"></script>
+		<script>
+			$('#kkk').on('click',function(){
+				anictr({
+					ele:'#ddd',
+					ani:'bounceinR',
+					dur:'1000',
+					tim: 'ease',
+					before:function(obj){
+						 var el = document.querySelector(obj.ele);
+               			 el.style.display = 'block'
+					},
+					after:function(obj){}
+				}).go().then(
+					anictr({
+						ele:'#ddd',
+						ani:'fadeOut',
+						dur:'1000',
+						tim: 'ease',
+						before:function(obj){
+						},
+						after:function(obj){}
+					}),800
+					)
+			})
+			
+			$("#ccc").on('click',function(){
+				anictr({
+					ele:'#ddd',
+					ani:'bounceinR',
+					dur:'1000',
+					tim: 'ease',
+					before:function(obj){
+						 var el = document.querySelector(obj.ele);
+               			 el.style.display = 'block'
+					},
+					after:function(obj){}
+				}).go()
+			})
+			$("#eee").on('click',function(){
+				anictr({
+					ele:'#ddd',
+					ani:'fadeOut',
+					dur:'1000',
+					tim:'ease',
+					before:function(obj){
+						
+					},
+					after:function(obj){}
+				}).go()
+			})
+		</script>
+	</body>
+</html>
+

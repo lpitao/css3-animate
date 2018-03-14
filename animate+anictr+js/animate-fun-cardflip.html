@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+		<style>
+			#cardflip {
+			    width: 200px;
+			    height: 260px;
+			    position: relative;
+			    perspective: 800px;	    
+			    margin: 0 auto;
+			}
+			#card1 {
+			    width: 100%;
+			    height: 100%;
+			    position: absolute;
+			    transform-style: preserve-3d;
+			    transition: transform 1s;
+			    transform-origin: left center; 
+			}
+			#card1 div{
+			    position: absolute;
+			    width: 100%;
+			    height: 100%;
+			    backface-visibility: hidden;
+			    color: #FFFFFF;
+			    font-size: 54px;
+			    line-height: 100%;
+			    text-align: center;
+			}
+			#card1.flipped {
+			 	transform: translateX(100%) rotateY(180deg);
+			}
+			#card1 .front {
+			    background: red;
+			}
+			#card1 .back {
+			    background: blue;
+			    transform: rotateY( 180deg );
+			}
+		</style>
+		
+	</head>
+	<body>
+		<div id="cardflip">
+		  <div id="card1">
+		    <div class="front">1</div>
+		    <div class="back">2</div>
+		  </div>
+		</div>
+	</body>
+	<script>
+		$("#card1").on("click",function(){
+			if($(this).is(".flipped")){
+				$(this).removeClass();
+			}else{
+				$(this).addClass("flipped")
+			}
+		})
+	</script>
+</html>
