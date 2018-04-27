@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.container {
+			  width: 400px;
+			  height: 500px;
+			  margin: 20px auto;
+			  background: url("https://user-images.githubusercontent.com/8554143/34369102-3ea353ac-eaf4-11e7-9d27-f7d28c6a66f6.jpg"), url("https://user-images.githubusercontent.com/8554143/34369175-c14ae23e-eaf4-11e7-96f1-e146e5e5a96b.jpg");
+			  background-size: cover;
+			  background-position: 0,-120px;
+			  /*background-blend-mode: lighten;*/
+			}
+			
+			.pic {
+			  width: 100px;
+			  height: 100px;
+			  margin: 50px auto;
+			  cursor: pointer;
+			  transition: .5s all ease-out;
+			}
+			
+			.pic1 {
+			  background-image: url("https://user-images.githubusercontent.com/8554143/34350345-4812d23a-ea51-11e7-98eb-461188ce9125.png"), linear-gradient(#f09, #09f, #f0f);
+			  background-blend-mode: lighten;
+			  background-size: cover;
+			  /*background-position: 0 0, 0 120px;*/
+			  background-repeat: no-repeat;
+			}
+			
+			.pic1:hover {
+			  background-position: 0 0, 0 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container"></div>
+		<div class="pic pic1"></div>
+	</body>
+</html>

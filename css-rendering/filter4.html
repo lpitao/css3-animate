@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+				/*火焰*/
+			body {
+			  background: #000;
+			  overflow: hidden;
+			}
+			
+			:root {
+			  --fireWidth: 115px;
+			  --fireHeight: 200px;
+			  --dotSize: 24px;
+			  --fireColor: #b5932f;
+			}
+			
+			.g-container {
+			  position: relative;
+			  width: 384px;
+			  height: 300px;
+			  margin: 0 auto;
+			  background-color: #000;
+			}
+			
+			.g-fire {
+			  position: absolute;
+			  width: 0;
+			  height: 0;
+			  bottom: 100px;
+			  left: 50%;
+			  border-radius: 45%;
+			  box-sizing: border-box;
+			  border: 200px solid #000;
+			  border-bottom: 200px solid transparent;
+			  -webkit-transform: translate(-50%, 0) scaleX(0.4);
+			          transform: translate(-50%, 0) scaleX(0.4);
+			  background-color: var(--fireColor);
+			  -webkit-filter: blur(20px) contrast(30);
+			          filter:  contrast(30);
+			}
+			
+			.g-dot {
+			  position: absolute;
+			  bottom: -210px;
+			  left: 0;
+			  width: var(--dotSize);
+			  height: var(--dotSize);
+			  background: #000;
+			  border-radius: 50%;
+			}
+			
+			.g-dot:nth-child(1) {
+			  bottom: -269px;
+			  left: -25px;
+			  -webkit-animation: move 2.7s infinite 3.4s linear;
+			          animation: move 2.7s infinite 3.4s linear;
+			}
+			
+			.g-dot:nth-child(2) {
+			  bottom: -295px;
+			  left: 41px;
+			  -webkit-animation: move 2.9s infinite 0.8s linear;
+			          animation: move 2.9s infinite 0.8s linear;
+			}
+			
+			.g-dot:nth-child(3) {
+			  bottom: -324px;
+			  left: -150px;
+			  -webkit-animation: move 3.1s infinite 5.2s linear;
+			          animation: move 3.1s infinite 5.2s linear;
+			}
+			
+			.g-dot:nth-child(4) {
+			  bottom: -331px;
+			  left: -81px;
+			  -webkit-animation: move 1s infinite 1.3s linear;
+			          animation: move 1s infinite 1.3s linear;
+			}
+			
+			.g-dot:nth-child(5) {
+			  bottom: -243px;
+			  left: 102px;
+			  -webkit-animation: move 3.3s infinite 2.3s linear;
+			          animation: move 3.3s infinite 2.3s linear;
+			}
+			
+			.g-dot:nth-child(6) {
+			  bottom: -267px;
+			  left: 122px;
+			  -webkit-animation: move 2.1s infinite 4.2s linear;
+			          animation: move 2.1s infinite 4.2s linear;
+			}
+			
+			.g-dot:nth-child(7) {
+			  bottom: -241px;
+			  left: -118px;
+			  -webkit-animation: move 2.3s infinite 3.9s linear;
+			          animation: move 2.3s infinite 3.9s linear;
+			}
+			
+			.g-dot:nth-child(8) {
+			  bottom: -308px;
+			  left: 17px;
+			  -webkit-animation: move 0.9s infinite 0.9s linear;
+			          animation: move 0.9s infinite 0.9s linear;
+			}
+			
+			.g-dot:nth-child(9) {
+			  bottom: -250px;
+			  left: -5px;
+			  -webkit-animation: move 3.3s infinite 1.9s linear;
+			          animation: move 3.3s infinite 1.9s linear;
+			}
+			
+			.g-dot:nth-child(10) {
+			  bottom: -360px;
+			  left: -114px;
+			  -webkit-animation: move 1.2s infinite 0.8s linear;
+			          animation: move 1.2s infinite 0.8s linear;
+			}
+			
+			.g-dot:nth-child(11) {
+			  bottom: -271px;
+			  left: -145px;
+			  -webkit-animation: move 1.2s infinite 0.9s linear;
+			          animation: move 1.2s infinite 0.9s linear;
+			}
+			
+			.g-dot:nth-child(12) {
+			  bottom: -354px;
+			  left: 89px;
+			  -webkit-animation: move 2.9s infinite 5.5s linear;
+			          animation: move 2.9s infinite 5.5s linear;
+			}
+			
+			.g-dot:nth-child(13) {
+			  bottom: -256px;
+			  left: -71px;
+			  -webkit-animation: move 2.5s infinite 4.8s linear;
+			          animation: move 2.5s infinite 4.8s linear;
+			}
+			
+			.g-dot:nth-child(14) {
+			  bottom: -302px;
+			  left: -12px;
+			  -webkit-animation: move 2.7s infinite 2.5s linear;
+			          animation: move 2.7s infinite 2.5s linear;
+			}
+			
+			.g-dot:nth-child(15) {
+			  bottom: -269px;
+			  left: 4px;
+			  -webkit-animation: move 1.3s infinite 2s linear;
+			          animation: move 1.3s infinite 2s linear;
+			}
+			
+			.g-dot:nth-child(16) {
+			  bottom: -347px;
+			  left: 87px;
+			  -webkit-animation: move 2.2s infinite 0.6s linear;
+			          animation: move 2.2s infinite 0.6s linear;
+			}
+			
+			.g-dot:nth-child(17) {
+			  bottom: -296px;
+			  left: -39px;
+			  -webkit-animation: move 1.5s infinite 2s linear;
+			          animation: move 1.5s infinite 2s linear;
+			}
+			
+			.g-dot:nth-child(18) {
+			  bottom: -294px;
+			  left: -119px;
+			  -webkit-animation: move 1.7s infinite 4.7s linear;
+			          animation: move 1.7s infinite 4.7s linear;
+			}
+			
+			.g-dot:nth-child(19) {
+			  bottom: -305px;
+			  left: -2px;
+			  -webkit-animation: move 2s infinite 0.9s linear;
+			          animation: move 2s infinite 0.9s linear;
+			}
+			
+			.g-dot:nth-child(20) {
+			  bottom: -275px;
+			  left: -80px;
+			  -webkit-animation: move 2.9s infinite 5.5s linear;
+			          animation: move 2.9s infinite 5.5s linear;
+			}
+			
+			.g-dot:nth-child(21) {
+			  bottom: -323px;
+			  left: 110px;
+			  -webkit-animation: move 2.4s infinite 0.7s linear;
+			          animation: move 2.4s infinite 0.7s linear;
+			}
+			
+			.g-dot:nth-child(22) {
+			  bottom: -313px;
+			  left: -75px;
+			  -webkit-animation: move 0.9s infinite 0.2s linear;
+			          animation: move 0.9s infinite 0.2s linear;
+			}
+			
+			.g-dot:nth-child(23) {
+			  bottom: -354px;
+			  left: -109px;
+			  -webkit-animation: move 1.2s infinite 3.3s linear;
+			          animation: move 1.2s infinite 3.3s linear;
+			}
+			
+			.g-dot:nth-child(24) {
+			  bottom: -255px;
+			  left: 48px;
+			  -webkit-animation: move 2.7s infinite 2.9s linear;
+			          animation: move 2.7s infinite 2.9s linear;
+			}
+			
+			.g-dot:nth-child(25) {
+			  bottom: -248px;
+			  left: -55px;
+			  -webkit-animation: move 3s infinite 3.6s linear;
+			          animation: move 3s infinite 3.6s linear;
+			}
+			
+			.g-dot:nth-child(26) {
+			  bottom: -358px;
+			  left: 56px;
+			  -webkit-animation: move 1.8s infinite 0.6s linear;
+			          animation: move 1.8s infinite 0.6s linear;
+			}
+			
+			.g-dot:nth-child(27) {
+			  bottom: -258px;
+			  left: 27px;
+			  -webkit-animation: move 1.6s infinite 3.9s linear;
+			          animation: move 1.6s infinite 3.9s linear;
+			}
+			
+			.g-dot:nth-child(28) {
+			  bottom: -318px;
+			  left: 134px;
+			  -webkit-animation: move 3.3s infinite 3.3s linear;
+			          animation: move 3.3s infinite 3.3s linear;
+			}
+			
+			.g-dot:nth-child(29) {
+			  bottom: -252px;
+			  left: -111px;
+			  -webkit-animation: move 3.2s infinite 4.7s linear;
+			          animation: move 3.2s infinite 4.7s linear;
+			}
+			
+			.g-dot:nth-child(30) {
+			  bottom: -352px;
+			  left: -135px;
+			  -webkit-animation: move 1.9s infinite 5s linear;
+			          animation: move 1.9s infinite 5s linear;
+			}
+			
+			.g-dot:nth-child(31) {
+			  bottom: -323px;
+			  left: 89px;
+			  -webkit-animation: move 1s infinite 5.4s linear;
+			          animation: move 1s infinite 5.4s linear;
+			}
+			
+			.g-dot:nth-child(32) {
+			  bottom: -309px;
+			  left: -11px;
+			  -webkit-animation: move 1.3s infinite 1.2s linear;
+			          animation: move 1.3s infinite 1.2s linear;
+			}
+			
+			.g-dot:nth-child(33) {
+			  bottom: -310px;
+			  left: 138px;
+			  -webkit-animation: move 3.1s infinite 4.9s linear;
+			          animation: move 3.1s infinite 4.9s linear;
+			}
+			
+			.g-dot:nth-child(34) {
+			  bottom: -332px;
+			  left: 9px;
+			  -webkit-animation: move 1s infinite 2.4s linear;
+			          animation: move 1s infinite 2.4s linear;
+			}
+			
+			.g-dot:nth-child(35) {
+			  bottom: -241px;
+			  left: 62px;
+			  -webkit-animation: move 3.1s infinite 3.8s linear;
+			          animation: move 3.1s infinite 3.8s linear;
+			}
+			
+			.g-dot:nth-child(36) {
+			  bottom: -339px;
+			  left: 105px;
+			  -webkit-animation: move 3.2s infinite 3.1s linear;
+			          animation: move 3.2s infinite 3.1s linear;
+			}
+			
+			.g-dot:nth-child(37) {
+			  bottom: -265px;
+			  left: 29px;
+			  -webkit-animation: move 3.2s infinite 4.7s linear;
+			          animation: move 3.2s infinite 4.7s linear;
+			}
+			
+			.g-dot:nth-child(38) {
+			  bottom: -342px;
+			  left: -121px;
+			  -webkit-animation: move 2.8s infinite 1.2s linear;
+			          animation: move 2.8s infinite 1.2s linear;
+			}
+			
+			.g-dot:nth-child(39) {
+			  bottom: -359px;
+			  left: 49px;
+			  -webkit-animation: move 1.8s infinite 4.7s linear;
+			          animation: move 1.8s infinite 4.7s linear;
+			}
+			
+			.g-dot:nth-child(40) {
+			  bottom: -357px;
+			  left: -14px;
+			  -webkit-animation: move 3s infinite 5.1s linear;
+			          animation: move 3s infinite 5.1s linear;
+			}
+			
+			@-webkit-keyframes move {
+			  100% {
+			    -webkit-transform: translate3d(0, -350px, 0);
+			            transform: translate3d(0, -350px, 0);
+			  }
+			}
+			
+			@keyframes move {
+			  100% {
+			    -webkit-transform: translate3d(0, -350px, 0);
+			            transform: translate3d(0, -350px, 0);
+			  }
+			}
+		</style>
+	</head>
+	<body>
+		<div class="g-container">
+		  <div class="g-fire">
+		    <!--<div class="g-dot"></div>
+		    <div class="g-dot"></div>
+		    <div class="g-dot"></div>
+		    <div class="g-dot"></div>
+		    <div class="g-dot"></div>
+		    <div class="g-dot"></div>
+		    <div class="g-dot"></div>
+		    <div class="g-dot"></div>
+		    <div class="g-dot"></div>
+		    <div class="g-dot"></div>
+		    <div class="g-dot"></div>
+		    <div class="g-dot"></div>
+		    <div class="g-dot"></div>
+		    <div class="g-dot"></div>
+		    <div class="g-dot"></div>
+		    <div class="g-dot"></div>
+		    <div class="g-dot"></div>
+		    <div class="g-dot"></div>
+		    <div class="g-dot"></div>
+		    <div class="g-dot"></div>
+		    <div class="g-dot"></div>
+		    <div class="g-dot"></div>
+		    <div class="g-dot"></div>
+		    <div class="g-dot"></div>
+		    <div class="g-dot"></div>
+		    <div class="g-dot"></div>
+		    <div class="g-dot"></div>
+		    <div class="g-dot"></div>
+		    <div class="g-dot"></div>
+		    <div class="g-dot"></div>
+		    <div class="g-dot"></div>
+		    <div class="g-dot"></div>
+		    <div class="g-dot"></div>
+		    <div class="g-dot"></div>
+		    <div class="g-dot"></div>
+		    <div class="g-dot"></div>
+		    <div class="g-dot"></div>
+		    <div class="g-dot"></div>
+		    <div class="g-dot"></div>
+		    <div class="g-dot"></div>-->
+		  </div>
+		</div>
+	</body>
+</html>
