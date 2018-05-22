@@ -43,30 +43,30 @@
 <body>
 <h1>适合点击的动画</h1>
 <div class="fade">
-    <div class="box a-fadein">淡入</div>
-    <div class="box a-fadeinT">淡入-从上</div>
-    <div class="box a-fadeinR">淡入-从右</div>
-    <div class="box a-fadeinB">淡入-从下</div>
-    <div class="box a-fadeinL">淡入-从左</div>
-    <div class="box a-fadeout">淡出</div>
-    <div class="box a-fadeoutT">淡出-向上</div>
-    <div class="box a-fadeoutR">淡出-向右</div>
-    <div class="box a-fadeoutB">淡出-向下</div>
-    <div class="box a-fadeoutL">淡出-向左</div>
+    <div class="box" id="a-fadein">淡入</div>
+    <div class="box" id="a-fadeinT">淡入-从上</div>
+    <div class="box" id="a-fadeinR">淡入-从右</div>
+    <div class="box" id="a-fadeinB">淡入-从下</div>
+    <div class="box" id="a-fadeinL">淡入-从左</div>
+    <div class="box" id="a-fadeout">淡出</div>
+    <div class="box" id="a-fadeoutT">淡出-向上</div>
+    <div class="box" id="a-fadeoutR">淡出-向右</div>
+    <div class="box" id="a-fadeoutB">淡出-向下</div>
+    <div class="box" id="a-fadeoutL">淡出-向左</div>
 </div>
 
 <div class="bounce">
-    <div class="box a-bounce">弹跳</div>
-    <div class="box a-bouncein">弹入</div>
-    <div class="box a-bounceinT">弹入-从上</div>
-    <div class="box a-bounceinB">弹入-从下</div>
-    <div class="box a-bounceinR">弹入-从右</div>
-    <div class="box a-bounceinL">弹入-从左</div>
-    <div class="box a-bounceout">弹出</div>
-    <div class="box a-bounceoutT">弹出-向上</div>
-    <div class="box a-bounceoutB">弹出-向下</div>
-    <div class="box a-bounceoutR">弹出-向右</div>
-    <div class="box a-bounceoutL">弹出-向左</div>
+    <div class="box" id="a-bounce">弹跳</div>
+    <div class="box" id="a-bouncein">弹入</div>
+    <div class="box" id="a-bounceinT">弹入-从上</div>
+    <div class="box" id="a-bounceinB">弹入-从下</div>
+    <div class="box" id="a-bounceinR">弹入-从右</div>
+    <div class="box" id="a-bounceinL">弹入-从左</div>
+    <div class="box" id="a-bounceout">弹出</div>
+    <div class="box" id="a-bounceoutT">弹出-向上</div>
+    <div class="box" id="a-bounceoutB">弹出-向下</div>
+    <div class="box" id="a-bounceoutR">弹出-向右</div>
+    <div class="box" id="a-bounceoutL">弹出-向左</div>
 </div>
 
 
@@ -84,13 +84,13 @@
 </div>
 
 <div class="flip">
-    <div class="box a-flip">翻转</div>
-    <div class="box a-flipin">翻入-Y轴</div>
-    <div class="box a-flipinX">翻入-X轴</div>
-    <div class="box a-flipinY">翻入-Y轴</div>
-    <div class="box a-flipout">翻出-Y轴</div>
-    <div class="box a-flipoutX">翻出-X轴</div>
-    <div class="box a-flipoutY">翻出-Y轴</div>
+    <div class="box" id="a-flip">翻转</div>
+    <div class="box" id="a-flipin">翻入-Y轴</div>
+    <div class="box" id="a-flipinX">翻入-X轴</div>
+    <div class="box" id="a-flipinY">翻入-Y轴</div>
+    <div class="box" id="a-flipout">翻出-Y轴</div>
+    <div class="box" id="a-flipoutX">翻出-X轴</div>
+    <div class="box" id="a-flipoutY">翻出-Y轴</div>
 </div>
 
 <div class="box a-flash">闪烁</div>
@@ -101,4 +101,37 @@
 
 
 </body>
+	<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.js"></script>
+	<script src="src/anictr.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var anName = ['a-fadein','a-fadeinT','a-fadeinR','a-fadeinB','a-fadeinL','a-fadeout','a-fadeoutT','a-fadeoutR','a-fadeoutB','a-fadeoutL',
+					'a-bounce','a-bouncein','a-bounceinT','a-bounceinB','a-bounceinR','a-bounceinL','a-bounceout','a-bounceoutT','a-bounceoutB','a-bounceoutR','a-bounceoutL',
+					'a-flip','a-flipin','a-flipinX','a-flipinY','a-flipout','a-flipoutX','a-flipoutY'
+		]
+		for(var i = 0; i < anName.length; i++){
+			$('#'+ anName[i]).on('click',function(){
+				var id = $(this).attr('id');
+				anictr({
+					ele:'#'+id,
+					ani:id,
+					dur:'1000',
+					tim: 'ease',
+					before:function(obj){
+					},
+					after:function(obj){}
+				}).go()
+			})
+		}
+//		$('#a-fadeinT').on('click',function(){
+//				anictr({
+//					ele:'#a-fadeinT',
+//					ani:'a-fadeinT',
+//					dur:'1000',
+//					tim: 'ease',
+//					before:function(obj){
+//					},
+//					after:function(obj){}
+//				}).go()
+//			})
+	</script>
 </html>

@@ -38,7 +38,6 @@ window.jQuery = window.$ = jQuery;
         this.ani = opts.ani;
         this.dur = opts.dur;
         this.tim = opts.tim;
-		console.log(this.ani)
         if(opts.before){
             this.before = opts.before;
         }
@@ -74,7 +73,6 @@ window.jQuery = window.$ = jQuery;
             }
             //比较上一次对象id和这一次对象id是否相同,相同id则删除:避免元素加上在有前一个class选择器的情况下再加class选择器
             if(eleArr.length > 0){
-            	console.log(1)
                 for(var k = 0; k < eleArr.length; k++){
                     if(ele === eleArr[k].ele){
                         removeClass(ele,eleArr[k].ani);//把上一个加在此元素上的class选择器去掉

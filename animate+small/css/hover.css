@@ -23,6 +23,17 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+[class^="hvr-"] {
+    margin: .4em;
+    padding: 1em;
+    cursor: pointer;
+    background: #e1e1e1;
+    text-decoration: none;
+    color: #666;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
 /*2D Transitions*/
 
 /*1-1整体变大*/
@@ -934,15 +945,6 @@
   -webkit-transform: scale(1.1) rotate(4deg);
   transform: scale(1.1) rotate(4deg);
 }
-
-
-
-
-
-
-
-
-
 
 /* Buzz */
 @-webkit-keyframes hvr-buzz {
@@ -2302,8 +2304,8 @@
   transition-timing-function: ease-out;
 }
 .hvr-reveal:hover:before, .hvr-reveal:focus:before, .hvr-reveal:active:before {
-  -webkit-transform: translateY(0);
-  transform: translateY(0);
+  /*-webkit-transform: translateY(0);
+  transform: translateY(0);*/
   border-width: 4px;
 }
 
