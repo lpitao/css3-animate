@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+	<head>
+		<style type="text/css">
+			.d_alert{
+				width: 300px;
+				background: dodgerblue;
+				height: 0px;
+				/*transition: all 3s ease;*/
+			}
+			.transfo{
+				height: 300px;
+			}
+			.anim{
+				width: 300px;
+				background: dodgerblue;
+				height: 0px;
+				animation: hhh 3s ease both;
+			}
+			.anim2{
+				width: 300px;
+				background: dodgerblue;
+				height: 0px;
+				animation: kkk 3s ease both;
+			}
+			@keyframes hhh{
+				from{
+					height: 0px;
+				}
+				to{
+					height: 300px;
+				}
+			}
+			@keyframes kkk{
+				from{
+					height: 300px;
+				}
+				to{
+					height: 0px;
+				}
+			}
+			
+			
+			.a-bounce{
+				width: 300px;
+				height: 300px;
+				background: dodgerblue;
+				animation-duration: 1s;
+				animation-fill-mode: both;
+				animation:1s ease-out ;
+				animation-name:bounce;}
+			@keyframes bounce{
+				0%{opacity: 0;}
+			    /*0%,20%,50%,80%,100%{-webkit-transform:translateY(0);}*/
+			    40%{-webkit-transform:translateY(-30px);}
+			    60%{-webkit-transform:translateY(-15px);}
+			    100%{opacity: 1;}
+			}
+			.a-bounceout{
+				width: 300px;
+				height: 300px;
+				background: dodgerblue;
+				animation-duration: 1s;
+				animation-fill-mode: both;
+				animation:1s ease-out ;
+				animation-name:bounceout;
+			}
+			@keyframes bounceout{
+			   /* 0%,20%,50%,80%,100%{-webkit-transform:translateY(0);}*/
+			    0%{opacity: 1;}
+			    40%{-webkit-transform:translateY(-30px);}
+			    60%{-webkit-transform:translateY(-15px);}
+			    100%{opacity: 0;}
+			}
+		</style>
+	</head>
+	<body>
+		<button class="hihi">hihi</button>
+		<div id="d_alert">234</div>
+		<script>
+		    var hihi = document.querySelector(".hihi");
+		    var dalert = document.querySelector("#d_alert")
+
+//		    hihi.addEventListener("click",function(){
+//		    	if(dalert.classList.contains('transfo') == true){
+//		    		dalert.classList.remove("transfo")
+//		    	}else{
+//		    		dalert.classList.add("transfo")
+//		    	}
+//		    },true)
+		    
+//		    hihi.addEventListener("click",function(){
+//		    	if(dalert.classList.contains('anim') == true){
+//		    		dalert.classList.remove("anim");
+//		    		dalert.classList.add("anim2");
+//		    	}else{
+//		    		dalert.classList.remove("anim2")
+//		    		dalert.classList.add("anim");
+//		    	}
+//		    },true)
+
+			 hihi.addEventListener("click",function(){
+		    	if(dalert.classList.contains('a-bounce') == true){
+		    		dalert.classList.remove("a-bounce");
+		    		dalert.classList.add("a-bounceout");
+		    	}else{
+		    		dalert.classList.remove("a-bounceout")
+		    		dalert.classList.add("a-bounce");
+		    	}
+		    },true)			
+		</script>
+	</body>
+</html>
